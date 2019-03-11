@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, AlertController, ToastController } from 'ionic-angular';
 import { BookRestProvider } from '../../providers/book-rest/book-rest';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-cart',
@@ -125,5 +126,8 @@ export class CartPage {
   }
 
 
+  goHome(){
+    this.navCtrl.push(HomePage);
+  }
 
 }

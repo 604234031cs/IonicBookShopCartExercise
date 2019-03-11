@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController,  ModalController } from 'ionic-angular';
+import { NavController,  ModalController, PopoverController } from 'ionic-angular';
 import { BookCategoryPage } from '../book-category/book-category';
 import { CartPage } from '../cart/cart';
 import { TopsellerPage } from '../topseller/topseller';
+import { PopoverComponent } from '../../components/popover/popover';
 
 
 
@@ -17,7 +18,7 @@ export class HomePage {
   numItem: number;  
   total:number;
 
-  constructor(public modalCtrl:ModalController, public navCtrl: NavController) {
+  constructor(public modalCtrl:ModalController, public navCtrl: NavController,public popoverCtr:PopoverController) {
 
   }
 
@@ -64,7 +65,16 @@ export class HomePage {
     this.navCtrl.push(BookCategoryPage);
   }
 
+  presentPopover(myEvent){
+    let popover = this.popoverCtr.create(PopoverComponent);
+    popover.present({
+      ev: myEvent
+  });
+  popover.onDidDismiss(popoverData =>{
+    console.log(popoverData);
+  });
   
+  }
 
   
 

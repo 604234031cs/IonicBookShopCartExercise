@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule, Popover } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BookCategoryPage } from '../pages/book-category/book-category';
 import { CartPage } from '../pages/cart/cart';
 import { TopsellerPage } from '../pages/topseller/topseller';
+import { PopoverComponent } from '../components/popover/popover';
+import { ProfilePage } from '../pages/profile/profile';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { TopsellerPage } from '../pages/topseller/topseller';
     BookDetailPage,
     BookCategoryPage,
     CartPage,
-    TopsellerPage
+    TopsellerPage,
+    PopoverComponent,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,9 @@ import { TopsellerPage } from '../pages/topseller/topseller';
     BookDetailPage,
     BookCategoryPage,
     CartPage,
-    TopsellerPage
+    TopsellerPage,
+    PopoverComponent,
+    ProfilePage
   ],
   providers: [
     StatusBar,
