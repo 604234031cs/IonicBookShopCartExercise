@@ -33,11 +33,11 @@
     <ion-slides pager="true">
       <ion-slide *ngFor="let book of books">
         <ion-list *ngIf="books">
-          <ion-card (click)="goToPageTopSell()">
+          <ion-item (click)="goToPageTopSell()">
               <ion-row justify-content-center align-items-center style="height: 100%">
               <img src='{{book.thumbnailUrl}}' style="width:150px;height:200px;" />
             </ion-row>
-          </ion-card>
+          </ion-item>
         </ion-list>
       </ion-slide>
     </ion-slides>
