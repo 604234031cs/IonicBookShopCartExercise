@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController,  ModalController, PopoverController } from 'ionic-angular';
+import { NavController,  ModalController, PopoverController ,NavParams,LoadingController  } from 'ionic-angular';
 import { BookCategoryPage } from '../book-category/book-category';
 import { CartPage } from '../cart/cart';
 import { TopsellerPage } from '../topseller/topseller';
 import { PopoverComponent } from '../../components/popover/popover';
+import { BookRestProvider } from '../../providers/book-rest/book-rest';
+import { Book } from '../../../models/book.model';
 
 
 
@@ -17,8 +19,11 @@ export class HomePage {
 
   numItem: number;  
   total:number;
+  books:Book;
+  category:string;
+  loading: any;
 
-  constructor(public modalCtrl:ModalController, public navCtrl: NavController,public popoverCtr:PopoverController) {
+  constructor(private bookRestProvider:BookRestProvider,public modalCtrl:ModalController, public navCtrl: NavController,public popoverCtr:PopoverController ,public navParams: NavParams,public loadingController:LoadingController ) {
 
   }
 
@@ -43,19 +48,8 @@ export class HomePage {
   }
 
 
-  ionViewWillEnter(){
-    
-    this.refreshNumItem();
-
-    if (localStorage.getItem('total')==null || Number.isNaN(Number(localStorage.getItem('total')))){      
-      localStorage.setItem('total','0');
-      this.total=0;
-    }else{
-      this.total=Number(localStorage.getItem('total'));
-    }
-  }
-
   
+
 
   goToPageTopSell(){
     this.navCtrl.push(TopsellerPage);
@@ -76,6 +70,25 @@ export class HomePage {
   
   }
 
-  
+  ionViewWillEnter(){        
+    this. loading = this.loadingController.create({ content: "please wait..." });
+    this.loading.present();   
+
+    this.refreshNumItem();
+    
+    
+    this.bookRestProvider.gettopsellerlist().subscribe(  
+      data=>{                
+          this.books=data.filter(book => (book!=null)); 
+          this.loading.dismissAll();
+      } 
+      ,
+      (err) => {
+        this.loading.dismissAll();
+        console.log(err);
+      }
+    );
+    
+  }
 
 }

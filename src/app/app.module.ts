@@ -15,6 +15,7 @@ import { CartPage } from '../pages/cart/cart';
 import { TopsellerPage } from '../pages/topseller/topseller';
 import { PopoverComponent } from '../components/popover/popover';
 import { ProfilePage } from '../pages/profile/profile';
+import { DetaildataPage } from '../pages/detaildata/detaildata';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ProfilePage } from '../pages/profile/profile';
     CartPage,
     TopsellerPage,
     PopoverComponent,
-    ProfilePage
+    ProfilePage,
+    DetaildataPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { ProfilePage } from '../pages/profile/profile';
     CartPage,
     TopsellerPage,
     PopoverComponent,
-    ProfilePage
+    ProfilePage,
+    DetaildataPage
   ],
   providers: [
     StatusBar,

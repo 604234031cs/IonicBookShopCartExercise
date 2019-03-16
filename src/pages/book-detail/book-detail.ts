@@ -3,6 +3,8 @@ import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { Book } from '../../../models/book.model';
 import { BookRestProvider } from '../../providers/book-rest/book-rest';
 import { CartPage } from '../cart/cart';
+import { DetaildataPage } from '../detaildata/detaildata';
+
 
 @Component({
   selector: 'page-book-detail',
@@ -90,4 +92,6 @@ export class BookDetailPage {
     this.navCtrl.pop();
   }
 
+  
+  
 }

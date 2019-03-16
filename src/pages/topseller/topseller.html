@@ -14,8 +14,11 @@
 
 
 <ion-content padding>
+
+    <ion-slides pager="true">
+        <ion-slide *ngFor="let book of books">
     <ion-list *ngIf="books">
-        <ion-item *ngFor="let book of books"  text-wrap>
+        <ion-item text-wrap>
           <ion-thumbnail item-start>
             <img src='{{book.thumbnailUrl}}' style="width:100px;height:120px;"/>
           </ion-thumbnail>          
@@ -28,9 +31,12 @@
               <ion-icon name="cart"></ion-icon>&nbsp;
               Add to Cart
               </button>
-         
         </ion-item>        
       </ion-list>
+    </ion-slide>
+     </ion-slides>
+
+
       <button ion-button full color="dark" (click)="goBack()">
           Back
         </button>
