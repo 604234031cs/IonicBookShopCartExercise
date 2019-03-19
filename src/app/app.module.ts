@@ -13,8 +13,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BookCategoryPage } from '../pages/book-category/book-category';
 import { CartPage } from '../pages/cart/cart';
 import { TopsellerPage } from '../pages/topseller/topseller';
-
-import { ProfilePage } from '../pages/profile/profile';
 import { DetaildataPage } from '../pages/detaildata/detaildata';
 
 @NgModule({
@@ -26,7 +24,6 @@ import { DetaildataPage } from '../pages/detaildata/detaildata';
     BookCategoryPage,
     CartPage,
     TopsellerPage,
-    ProfilePage,
     DetaildataPage
   ],
   imports: [
@@ -43,7 +40,6 @@ import { DetaildataPage } from '../pages/detaildata/detaildata';
     BookCategoryPage,
     CartPage,
     TopsellerPage,
-    ProfilePage,
     DetaildataPage
   ],
   providers: [
