@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BookCategoryPage } from '../pages/book-category/book-category';
 import { CartPage } from '../pages/cart/cart';
 import { TopsellerPage } from '../pages/topseller/topseller';
-import { PopoverComponent } from '../components/popover/popover';
+
 import { ProfilePage } from '../pages/profile/profile';
 import { DetaildataPage } from '../pages/detaildata/detaildata';
 
@@ -26,7 +26,6 @@ import { DetaildataPage } from '../pages/detaildata/detaildata';
     BookCategoryPage,
     CartPage,
     TopsellerPage,
-    PopoverComponent,
     ProfilePage,
     DetaildataPage
   ],
@@ -44,7 +43,6 @@ import { DetaildataPage } from '../pages/detaildata/detaildata';
     BookCategoryPage,
     CartPage,
     TopsellerPage,
-    PopoverComponent,
     ProfilePage,
     DetaildataPage
   ],

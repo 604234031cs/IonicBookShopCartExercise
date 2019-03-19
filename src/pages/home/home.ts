@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController,  ModalController, PopoverController ,NavParams,LoadingController  } from 'ionic-angular';
+import { NavController,  ModalController ,NavParams,LoadingController  } from 'ionic-angular';
 import { BookCategoryPage } from '../book-category/book-category';
 import { CartPage } from '../cart/cart';
 import { TopsellerPage } from '../topseller/topseller';
-import { PopoverComponent } from '../../components/popover/popover';
 import { BookRestProvider } from '../../providers/book-rest/book-rest';
 import { Book } from '../../../models/book.model';
 
@@ -22,11 +21,14 @@ export class HomePage {
   books:Book;
   category:string;
   loading: any;
+  
+  
 
-  constructor(private bookRestProvider:BookRestProvider,public modalCtrl:ModalController, public navCtrl: NavController,public popoverCtr:PopoverController ,public navParams: NavParams,public loadingController:LoadingController ) {
-
+  constructor(private bookRestProvider:BookRestProvider,public modalCtrl:ModalController, public navCtrl: NavController,public navParams: NavParams,public loadingController:LoadingController ) {
+   
   }
 
+  
   showCart(){    
     let modal=this.modalCtrl.create(CartPage);
     modal.onDidDismiss( (data)=>{
@@ -59,16 +61,7 @@ export class HomePage {
     this.navCtrl.push(BookCategoryPage);
   }
 
-  presentPopover(myEvent){
-    let popover = this.popoverCtr.create(PopoverComponent);
-    popover.present({
-      ev: myEvent
-  });
-  popover.onDidDismiss(popoverData =>{
-    console.log(popoverData);
-  });
   
-  }
 
   ionViewWillEnter(){        
     this. loading = this.loadingController.create({ content: "please wait..." });

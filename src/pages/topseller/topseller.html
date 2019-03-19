@@ -16,22 +16,27 @@
 <ion-content padding>
 
     <ion-slides pager="true">
-        <ion-slide *ngFor="let book of books">
-    <ion-list *ngIf="books">
-        <ion-item text-wrap>
-          <ion-thumbnail item-start>
-            <img src='{{book.thumbnailUrl}}' style="width:100px;height:120px;"/>
-          </ion-thumbnail>          
-          <p><strong>{{book.title}}</strong> - {{book.author}}</p>
+      <ion-slide *ngFor="let book of books">
+  <ion-list *ngIf="books">
+      <ion-grid  >
+          <ion-row justify-content-center align-items-center >
+      <ion-thumbnail item-start>
+        <img src='{{book.thumbnailUrl}}' style="width:200px;height:220px;" />
+      </ion-thumbnail>
+    </ion-row>
+          <h2><strong>{{book.title}}</strong></h2> 
+          <h2>{{book.author}}</h2>
           <p><ion-badge color="secondary" item-end><strong>฿{{book.price}}</strong></ion-badge> </p>
+
           <button ion-button   (click)="ShowDetail(book.bookid)">            
-            <ion-icon name="md-list-box"     ></ion-icon>&nbsp;            
+            <ion-icon name="md-list-box"></ion-icon>&nbsp;            
           </button>
           <button ion-button full color="danger" (click)="BookAdd(book.bookid,book.title,book.price)">
               <ion-icon name="cart"></ion-icon>&nbsp;
               Add to Cart
               </button>
-        </ion-item>        
+              <
+      </ion-grid>      
       </ion-list>
     </ion-slide>
      </ion-slides>
